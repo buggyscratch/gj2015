@@ -8,7 +8,7 @@ public class Constants {
 
 	public class UIElements {
 		public const string FuelLabel = "UIFuel";
-		public const string FuelLabelText = "Remaining Fuel <b>PLACEHOLDER</b>";
+		public const string FuelLabelText = "Remaining Fuel PLACEHOLDER";
 	}
 
 }

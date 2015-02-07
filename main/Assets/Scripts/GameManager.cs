@@ -5,8 +5,8 @@ using System.Collections;
 public class GameManager : MonoBehaviour {
 
 	public int startingFuel;
-	private int currentFuel;
-	private Text fuelLabel;
+	private int currentFuel, p1Points, p2Points;
+	private Text fuelLabel, p1PointsLabel, p2PointsLabel;
 
 	// Use this for initialization
 	void Start () {
@@ -22,6 +22,8 @@ public class GameManager : MonoBehaviour {
 
 	void UISetup(){
 		fuelLabel = GameObject.Find(Constants.UIElements.FuelLabel).GetComponent<Text>();
+		p1PointsLabel = GameObject.Find (Constants.UIElements.P1PointsLabel).GetComponent<Text> ();
+		p2PointsLabel = GameObject.Find (Constants.UIElements.P2PointsLabel).GetComponent<Text> ();
 	}
 
 	void ResourceSetup(){
@@ -33,6 +35,8 @@ public class GameManager : MonoBehaviour {
 	}
 
 	void UIUpdate(){
-		fuelLabel.text = Constants.UIElements.FuelLabelText.Replace(Constants.Placeholder,currentFuel.ToString());
+		fuelLabel.text = string.Format("{0} {1}", Constants.UIElements.FuelLabelText, currentFuel.ToString());
+		p1PointsLabel.text = string.Format("{0} {1}",Constants.UIElements.PlayerPointsText, p1Points.ToString());
+		p2PointsLabel.text = string.Format("{0} {1}",Constants.UIElements.PlayerPointsText, p2Points.ToString());
 	}
 }

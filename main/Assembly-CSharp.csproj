@@ -47,17 +47,14 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Constants.cs" />
-<<<<<<< HEAD
      <Compile Include="Assets\Scripts\FollowCamera.cs" />
      <Compile Include="Assets\Scripts\FollowTarget.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
-=======
      <Compile Include="Assets\Scripts\Controller.cs" />
      <Compile Include="Assets\Scripts\FollowCamera.cs" />
      <Compile Include="Assets\Scripts\FollowTarget.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\Mothership.cs" />
->>>>>>> origin/master
      <Compile Include="Assets\Scripts\RotationScript.cs" />
      <Compile Include="Assets\Scripts\TestForce.cs" />
  <Reference Include="UnityEngine.UI">

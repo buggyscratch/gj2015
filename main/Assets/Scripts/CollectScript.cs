@@ -14,9 +14,21 @@ public class CollectScript : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D collider2D) {
-		if (collider2D.gameObject.name == "P1Point") {
-			Debug.Log("P1PointCollected");
+		switch (collider2D.gameObject.name) {
+		case "P1Point":
+			GameManager.p1Points += 100;
 			Destroy(collider2D.gameObject);
+			break;
+		case "P2Point":
+			GameManager.p2Points += 100;
+			Destroy(collider2D.gameObject);
+			break;
+		case "Fuel":
+			GameManager.currentFuel += 50;
+			Destroy(collider2D.gameObject);
+			break;
+		default:
+			break;
 		}
 	}
 }

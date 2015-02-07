@@ -13,7 +13,7 @@ public class Mothership : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		//MoveMothership ();
+		MoveMothership ();
 	}
 
 	void MoveMothership()

@@ -31,14 +31,6 @@ public class GameManager : MonoBehaviour {
 
 	public static void ExplodeMothership(){
 		state = GameState.GameOver;
-		UpdateResources ();
-		UIUpdate ();
-
-		// restart level // game is lost
-		if (currentFuel < 0) {
-			Application.LoadLevel (thisLevel); 
-		}
-
 	}
 
 	void UISetup(){

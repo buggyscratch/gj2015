@@ -16,8 +16,6 @@ public class Mothership : MonoBehaviour {
 		if (GameManager.state == GameState.Running) {
 			MoveMothership ();
 		}
-	void MothershipUpdate () {
-		MoveMothership ();
 	}
 
 	void MoveMothership()

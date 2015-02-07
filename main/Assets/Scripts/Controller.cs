@@ -6,7 +6,7 @@ using System;
 public class Controller : MonoBehaviour {
 	public Transform motherShip_t, sprite;
 	public Rigidbody2D motherShip_r2d;
-	public RawImage shotDot;
+	public RawImage shotDot1, shotDot2;
 	public float targetSpeed, shotForce;
 	public string axis, fire;
 	public AudioClip repulsorSound;
@@ -16,35 +16,50 @@ public class Controller : MonoBehaviour {
 	float time;
 
 	private float speed;
-	private DateTime shotTime;
+	private DateTime rechargeTime;
+	private int shots;
 	private bool canShoot;
 
 	// Use this for initialization
 	void Start () {
+		shots = 0;
+		shotDot1.CrossFadeAlpha (0, 0.2f, false);
+		shotDot2.CrossFadeAlpha (0, 0.2f, false);
 		if (axis.Equals("Vertical")){
 			speed = 180;
 		}
 		perlin1 = new PerlinNoise(UnityEngine.Random.Range(0,16));
 		perlin2 = new PerlinNoise(UnityEngine.Random.Range(0,16));
-		shotTime = DateTime.Now;
+		rechargeTime = DateTime.Now;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		if (GameManager.state == GameState.Running) {
 			time += Time.deltaTime;
-			canShoot = DateTime.Now > shotTime.AddSeconds (Constants.ShotDelay);
-
-
-		time += Time.deltaTime;
-		canShoot = DateTime.Now > shotTime.AddSeconds (Constants.ShotDelay);
-
-			shotDot.CrossFadeAlpha (canShoot ? 1 : 0, 0.2f, false);
+			canShoot = DateTime.Now > rechargeTime.AddSeconds (Constants.ShotDelay);
+			if (canShoot && shots < Constants.MaxShots){
+				shots++;
+				if (shots==1){
+					shotDot1.CrossFadeAlpha (1, 0.2f, true);
+				}
+				if (shots==2){
+					shotDot2.CrossFadeAlpha (1, 0.2f, true);
+				}
+				rechargeTime = DateTime.Now;
+			}
 
 			UpdatePosition ();
 
-			if (Input.GetButtonDown (fire) && canShoot) {
+			if (Input.GetButtonDown (fire) && shots > 0) {
 				ShootRepulsor ();
+				shots--;
+				if (shots==0){
+					shotDot1.CrossFadeAlpha (0, 0.2f, true);
+				}
+				if (shots==1){
+					shotDot2.CrossFadeAlpha (0, 0.2f, true);
+				}
 			}
 		}
 	}
@@ -62,7 +77,6 @@ public class Controller : MonoBehaviour {
 		motherShip_r2d.AddForce(temp.normalized * shotForce);
 		audio.pitch = UnityEngine.Random.Range (0.9f, 1.1f);
 		audio.PlayOneShot (repulsorSound);
-		shotTime = DateTime.Now;
 	}
 
 	//Not usable

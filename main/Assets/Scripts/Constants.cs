@@ -7,6 +7,7 @@ public class Constants {
 	public const string Placeholder = "PLACEHOLDER";
 
 	public const double ShotDelay = 3;
+	public const int MaxShots = 2;
 
 	public class UIElements {
 		public const string FuelLabel = "UIFuel";

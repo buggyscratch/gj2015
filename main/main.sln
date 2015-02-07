@@ -1,3 +1,6 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
 Project("{FAD58DE7-3664-95DB-4650-CFEFAC2FCD61}") = "main", "Assembly-CSharp.csproj", "{D51DBFA1-EA56-AAD3-3091-664BCCBB9AFB}"
 EndProject
 Global
@@ -14,7 +17,7 @@ Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-		GlobalSection(MonoDevelopProperties) = preSolution
+						GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Assembly-CSharp.csproj
 		Policies = $0
 		$0.TextStylePolicy = $1

@@ -15,6 +15,7 @@ public class Constants {
 		public const string P2PointsLabel = "P2UIPoints";
 		public const string PlayerPointsText = "POINTS";
 		public const string FuelLabelText = "Remaining Fuel";
+		public const string PausedPanel = "PausedPanel";
 	}
 }
 

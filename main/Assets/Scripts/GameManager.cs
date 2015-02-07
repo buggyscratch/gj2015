@@ -27,6 +27,16 @@ public class GameManager : MonoBehaviour {
 			UpdateResources ();
 			UIUpdate ();
 		}
+		if (Input.GetKeyDown (KeyCode.P)) {
+			var panel = GameObject.Find(Constants.UIElements.FuelLabel);
+			if (state == GameState.Running)	{
+				state = GameState.Paused;
+
+			}
+			else if (state ==GameState.Paused){
+				state = GameState.Running;
+			}
+		}
 	}
 
 	public static void ExplodeMothership(){

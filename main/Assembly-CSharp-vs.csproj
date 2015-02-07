@@ -46,14 +46,18 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scenes\AudioScripts\AudioManager.cs" />
+     <Compile Include="Assets\Scripts\CollectScript.cs" />
      <Compile Include="Assets\Scripts\Constants.cs" />
      <Compile Include="Assets\Scripts\Controller.cs" />
      <Compile Include="Assets\Scripts\FollowCamera.cs" />
      <Compile Include="Assets\Scripts\FollowTarget.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\Mothership.cs" />
+     <Compile Include="Assets\Scripts\PerlinNoise.cs" />
      <Compile Include="Assets\Scripts\RotationScript.cs" />
      <Compile Include="Assets\Scripts\TestForce.cs" />
+     <Compile Include="Assets\Scripts\Woople.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.2/UnityEngine.UI.dll</HintPath>
  </Reference>

@@ -4,8 +4,8 @@ using System.Collections;
 
 public class GameManager : MonoBehaviour {
 
-	public int startingFuel;
-	private int currentFuel, p1Points, p2Points;
+	public int startingFuel, secondsToHyperjump;
+	public static int currentFuel, p1Points, p2Points;
 	private Text fuelLabel, p1PointsLabel, p2PointsLabel;
 
 	// Use this for initialization

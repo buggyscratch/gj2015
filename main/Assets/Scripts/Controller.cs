@@ -31,6 +31,8 @@ public class Controller : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+
 		time += Time.deltaTime;
 		canShoot = DateTime.Now > shotTime.AddSeconds (Constants.ShotDelay);
 

@@ -7,6 +7,8 @@ public class GameManager : MonoBehaviour {
 	public int startingFuel, secondsToHyperjump;
 	public static int currentFuel, p1Points, p2Points;
 	private Text fuelLabel, p1PointsLabel, p2PointsLabel;
+	public Mothership mothership;
+	public string thisLevel;
 
 	// Use this for initialization
 	void Start () {
@@ -18,6 +20,12 @@ public class GameManager : MonoBehaviour {
 	void Update () {
 		UpdateResources ();
 		UIUpdate ();
+
+		// restart level // game is lost
+		if (currentFuel < 0) {
+			Application.LoadLevel (thisLevel); 
+		}
+
 	}
 
 	void UISetup(){

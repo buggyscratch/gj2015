@@ -20,11 +20,12 @@ public class Mothership : MonoBehaviour {
 	void MoveMothership()
 	{
 		bool shouldMove = false;
-		if (!transform.position.x.Equals(anchorX)) {
+		if (!transform.position.x.Equals (anchorX)) {
 			shouldMove = true;
-		}
-		if (!transform.position.y.Equals(anchorY)) {
+		} else if (!transform.position.y.Equals (anchorY)) {
 			shouldMove = true;
+		} else {
+			state = MothershipState.Normal;
 		}
 
 		if (shouldMove && state == MothershipState.Returning) {

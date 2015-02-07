@@ -13,7 +13,9 @@ public class Mothership : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		MoveMothership ();
+		if (GameManager.state == GameState.Running) {
+			MoveMothership ();
+		}
 	}
 
 	void MoveMothership()

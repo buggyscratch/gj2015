@@ -14,7 +14,9 @@ public class Woople : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		time += Time.deltaTime;
-		transform.position = new Vector2 (thisPosition.x + perlin.FractalNoise2D(new Vector2(thisPosition.x + time ,thisPosition.y + time),8,0.03f,2f,0.5f,amount), thisPosition.y + perlin.FractalNoise2D(new Vector2(thisPosition.y + time,thisPosition.y + time),8,0.03f,2f,0.5f,amount));
+		if (GameManager.state == GameState.Running) {
+			time += Time.deltaTime;
+			transform.position = new Vector2 (thisPosition.x + perlin.FractalNoise2D (new Vector2 (thisPosition.x + time, thisPosition.y + time), 8, 0.03f, 2f, 0.5f, amount), thisPosition.y + perlin.FractalNoise2D (new Vector2 (thisPosition.y + time, thisPosition.y + time), 8, 0.03f, 2f, 0.5f, amount));
+		}
 	}
 }

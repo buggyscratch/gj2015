@@ -23,3 +23,10 @@ public enum MothershipState{
 	Pushed,
 	Destroyed
 }
+
+public enum GameState{
+	Running,
+	Paused,
+	Menu,
+	GameOver
+}

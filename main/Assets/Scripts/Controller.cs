@@ -31,15 +31,17 @@ public class Controller : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		time += Time.deltaTime;
-		canShoot = DateTime.Now > shotTime.AddSeconds (Constants.ShotDelay);
+		if (GameManager.state == GameState.Running) {
+			time += Time.deltaTime;
+			canShoot = DateTime.Now > shotTime.AddSeconds (Constants.ShotDelay);
 
-		shotDot.CrossFadeAlpha (canShoot ? 1 : 0, 0.2f, false);
+			shotDot.CrossFadeAlpha (canShoot ? 1 : 0, 0.2f, false);
 
-		UpdatePosition ();
+			UpdatePosition ();
 
-		if (Input.GetButtonDown (fire) && canShoot) {
-			ShootRepulsor ();
+			if (Input.GetButtonDown (fire) && canShoot) {
+				ShootRepulsor ();
+			}
 		}
 	}
 

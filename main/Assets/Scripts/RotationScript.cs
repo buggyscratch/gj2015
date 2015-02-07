@@ -15,12 +15,13 @@ public class RotationScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update() {
-		speed += Input.GetAxis ("Vertical");
-		transform.rotation = Quaternion.Euler(new Vector3(0,0,speed*targetSpeed));
-		/*if(Input.GetKeyDown(KeyCode.Space)){
+		if (GameManager.state == GameState.Running) {
+			speed += Input.GetAxis ("Vertical");
+			transform.rotation = Quaternion.Euler (new Vector3 (0, 0, speed * targetSpeed));
+			/*if(Input.GetKeyDown(KeyCode.Space)){
 			Vector2 dir = motherShipTransform.position - transform.position;
 				motherShipRigidBody2D.AddForce(Vector2.up);
 		}*/
-
+		}
 	}
 }

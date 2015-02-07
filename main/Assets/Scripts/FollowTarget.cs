@@ -17,12 +17,13 @@ public class FollowTarget : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		if (GameManager.state == GameState.Running) {
+			x = transform.position.x;
 
-		x = transform.position.x;
-
-		y = transform.position.y;
+			y = transform.position.y;
 
 		
-		target.transform.position = new Vector3(x*slur,y*slur);
+			target.transform.position = new Vector3 (x * slur, y * slur);
+		}
 	}
 }

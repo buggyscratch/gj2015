@@ -27,6 +27,9 @@ public class CollectScript : MonoBehaviour {
 			GameManager.currentFuel += 50;
 			Destroy(collider2D.gameObject);
 			break;
+		case "Astroid":
+			GameManager.ExplodeMothership();
+			break;
 		default:
 			break;
 		}

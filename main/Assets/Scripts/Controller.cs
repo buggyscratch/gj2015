@@ -8,7 +8,9 @@ public class Controller : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
+		if (axis.Equals("Vertical")){
+			speed = 180;
+		}
 	}
 	
 	// Update is called once per frame

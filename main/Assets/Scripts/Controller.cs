@@ -35,6 +35,10 @@ public class Controller : MonoBehaviour {
 			time += Time.deltaTime;
 			canShoot = DateTime.Now > shotTime.AddSeconds (Constants.ShotDelay);
 
+
+		time += Time.deltaTime;
+		canShoot = DateTime.Now > shotTime.AddSeconds (Constants.ShotDelay);
+
 			shotDot.CrossFadeAlpha (canShoot ? 1 : 0, 0.2f, false);
 
 			UpdatePosition ();

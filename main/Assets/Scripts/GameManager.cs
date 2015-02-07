@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour {
 	private Text fuelLabel, p1PointsLabel, p2PointsLabel;
 	public static GameState state;
 	public DateTime startTime;
+	public Mothership mothership;
+	public string thisLevel;
 
 	// Use this for initialization
 	void Start () {
@@ -29,6 +31,14 @@ public class GameManager : MonoBehaviour {
 
 	public static void ExplodeMothership(){
 		state = GameState.GameOver;
+		UpdateResources ();
+		UIUpdate ();
+
+		// restart level // game is lost
+		if (currentFuel < 0) {
+			Application.LoadLevel (thisLevel); 
+		}
+
 	}
 
 	void UISetup(){

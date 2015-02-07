@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class CollectScript : MonoBehaviour {
-
+	public AudioClip collectSound;
 	// Use this for initialization
 	void Start () {
 	
@@ -17,14 +17,17 @@ public class CollectScript : MonoBehaviour {
 		switch (collider2D.gameObject.name) {
 		case "P1Point":
 			GameManager.p1Points += 100;
+			audio.PlayOneShot(collectSound);
 			Destroy(collider2D.gameObject);
 			break;
 		case "P2Point":
 			GameManager.p2Points += 100;
+			audio.PlayOneShot(collectSound);
 			Destroy(collider2D.gameObject);
 			break;
 		case "Fuel":
-			GameManager.currentFuel += 50;
+			GameManager.currentFuel += 500;
+			audio.PlayOneShot(collectSound);
 			Destroy(collider2D.gameObject);
 			break;
 		case "Astroid":

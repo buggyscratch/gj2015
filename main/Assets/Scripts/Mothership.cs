@@ -5,6 +5,7 @@ public class Mothership : MonoBehaviour {
 
 	public float anchorX, anchorY, returnSpeed;
 	public MothershipState state;
+	public GameManager manager;
 
 	// Use this for initialization
 	void Start () {
@@ -14,7 +15,14 @@ public class Mothership : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (GameManager.state == GameState.Running) {
+			CheckWin();
 			MoveMothership ();
+		}
+	}
+
+	void CheckWin(){
+		if (new Vector2 (anchorX - transform.position.x, anchorY - transform.position.y).magnitude < 1) {
+			manager.WinLevel();
 		}
 	}
 

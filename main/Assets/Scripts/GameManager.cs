@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour {
 	public static GameState state;
 	public DateTime startTime;
 	public Mothership mothership;
-	public string thisLevel;
+	public int thisLevel, nextLevel;
 
 	// Use this for initialization
 	void Start () {
@@ -24,6 +24,30 @@ public class GameManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		if (Input.GetKeyDown (KeyCode.Escape)) {
+			Application.Quit();
+		}
+		if (state == GameState.Title) {
+			if(Input.anyKeyDown)
+			{
+				state = GameState.Running;
+			}
+		}
+
+		if (state == GameState.GameOver) {
+			if(Input.anyKeyDown)
+			{
+				Application.LoadLevel(thisLevel);
+			}
+		}
+
+		if (state == GameState.Win) {
+			if(Input.anyKeyDown)
+			{
+				Application.LoadLevel(nextLevel);
+			}
+		}
+
 		if (state == GameState.Running) {
 			UpdateResources ();
 			UIUpdate ();
@@ -107,6 +131,11 @@ public class GameManager : MonoBehaviour {
 	}
 
 	void UIUpdate(){
+		uiCanvas.alpha = 1f;
+		winCanvas.alpha = 0f;
+		gameoverCanvas.alpha = 0f;
+		pausedCanvas.alpha = 0f;
+		introCanvas.alpha = 0f;
 		fuelLabel.text = string.Format("{0} {1}", Constants.UIElements.FuelLabelText, currentFuel.ToString());
 		p1PointsLabel.text = string.Format("{0} {1}",Constants.UIElements.PlayerPointsText, p1Points.ToString());
 		p2PointsLabel.text = string.Format("{0} {1}",Constants.UIElements.PlayerPointsText, p2Points.ToString());

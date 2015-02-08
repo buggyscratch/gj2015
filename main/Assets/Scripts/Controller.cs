@@ -7,6 +7,7 @@ public class Controller : MonoBehaviour {
 	public Transform motherShip_t, sprite;
 	public Rigidbody2D motherShip_r2d;
 	public RawImage shotDot1, shotDot2;
+	public Animator shot;
 	public float targetSpeed, shotForce;
 	public string axis, fire;
 	public AudioClip repulsorSound;
@@ -70,9 +71,12 @@ public class Controller : MonoBehaviour {
 		speed += Input.GetAxis (axis) * targetSpeed;
 		transform.rotation = Quaternion.Euler(new Vector3 (0f,0f,speed));
 		FollowMothership ();
+		shot.transform.position = motherShip_t.position;
+
 	}
 
 	void ShootRepulsor(){
+		shot.Play (0);
 		Vector2 temp = new Vector2(motherShip_t.position.x-sprite.position.x,motherShip_t.position.y-sprite.position.y);
 		motherShip_r2d.AddForce(temp.normalized * shotForce);
 		audio.pitch = UnityEngine.Random.Range (0.9f, 1.1f);
@@ -82,8 +86,6 @@ public class Controller : MonoBehaviour {
 	//Not usable
 	void FollowMothership()	{
 		Vector2 toMothership = new Vector2 (motherShip_t.position.x - transform.position.x, motherShip_t.position.y - transform.position.y);
-		Debug.Log (toMothership);
 		transform.position = new Vector2 (motherShip_t.position.x + perlin1.FractalNoise2D(new Vector2(sprite.position.x + time ,sprite.position.y + time),8,0.03f,2f,0.5f,1f), motherShip_t.position.y + perlin2.FractalNoise2D(new Vector2(sprite.position.x + time,sprite.position.y + time),8,0.03f,1f,0.5f,1f));
-		//transform.Translate (toMothership*0.001f);
 	}
 }

@@ -1,0 +1,147 @@
+fileFormatVersion: 2
+guid: e6bdd7324492cd54bb9b05c446e12942
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: shotsheet_0
+    21300002: shotsheet_1
+    21300004: shotsheet_2
+    21300006: shotsheet_3
+    21300008: shotsheet_4
+    21300010: shotsheet_5
+    21300012: shotsheet_6
+    21300014: shotsheet_7
+    21300016: shotsheet_8
+    21300018: shotsheet_9
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 15
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: shotsheet_0
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 0
+        width: 7
+        height: 16
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: shotsheet_1
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 0
+        width: 7
+        height: 16
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: shotsheet_2
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 0
+        width: 7
+        height: 16
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: shotsheet_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 7
+        height: 16
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: shotsheet_4
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 16
+        width: 7
+        height: 16
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: shotsheet_5
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 16
+        width: 7
+        height: 16
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: shotsheet_6
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 16
+        width: 7
+        height: 16
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: shotsheet_7
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 16
+        width: 7
+        height: 16
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: shotsheet_8
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 0
+        width: 7
+        height: 16
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 

@@ -17,12 +17,12 @@ public class CollectScript : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D collider2D) {
 		switch (collider2D.gameObject.name) {
-		case "P1Point":
+		case "P2Point":
 			manager.p1Points += 100;
 			audio.PlayOneShot(collectSound);
 			Destroy(collider2D.gameObject);
 			break;
-		case "P2Point":
+		case "P1Point":
 			manager.p2Points += 100;
 			audio.PlayOneShot(collectSound);
 			Destroy(collider2D.gameObject);

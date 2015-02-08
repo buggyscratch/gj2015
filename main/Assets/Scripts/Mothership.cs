@@ -21,7 +21,7 @@ public class Mothership : MonoBehaviour {
 	}
 
 	void CheckWin(){
-		if (new Vector2 (anchorX - transform.position.x, anchorY - transform.position.y).magnitude < 1) {
+		if (anchorY - transform.position.y < 1) {
 			manager.WinLevel();
 		}
 	}

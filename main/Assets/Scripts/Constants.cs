@@ -6,7 +6,7 @@ public class Constants {
 	public const string Pause = "Paused";
 	public const string Placeholder = "PLACEHOLDER";
 
-	public const double ShotDelay = 3;
+	public const double ShotDelay = 1;
 	public const int MaxShots = 2;
 
 	public class UIElements {

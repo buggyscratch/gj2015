@@ -5,7 +5,7 @@ using System;
 
 public class GameManager : MonoBehaviour {
 
-	public int startingFuel, secondsToHyperjump;
+	public int startingFuel;
 	public int currentFuel, p1Points, p2Points;
 	public CanvasGroup winCanvas, pausedCanvas, uiCanvas, gameoverCanvas, introCanvas;
 	private Text fuelLabel, p1PointsLabel, p2PointsLabel;
@@ -106,8 +106,7 @@ public class GameManager : MonoBehaviour {
 		introCanvas.alpha = 1f;
 	}
 
-	public void GameOver()
-	{		
+	public void GameOver()	{		
 		state = GameState.GameOver;
 		uiCanvas.alpha = 0f;
 		winCanvas.alpha = 0f;
@@ -124,9 +123,6 @@ public class GameManager : MonoBehaviour {
 		currentFuel--;
 		if (currentFuel <= 0) {
 			GameOver();
-		}
-		if (startTime.AddSeconds (secondsToHyperjump) > DateTime.Now) {
-			WinLevel();
 		}
 	}
 

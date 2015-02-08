@@ -12,7 +12,7 @@ public class IntroScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (Input.anyKeyDown) {
-			Application.LoadLevel("startLevel");
+			Application.LoadLevel(1);
 		}
 	}
 }

@@ -1,5 +1,7 @@
 main/Library/*
 main\Library\*
+main/Temp/*
+main\Temp\*
 main/Temp/UnityLockfile
 main/Library/guidmapper
 main/Library/assetDatabase3

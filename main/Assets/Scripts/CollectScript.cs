@@ -3,6 +3,8 @@ using System.Collections;
 
 public class CollectScript : MonoBehaviour {
 	public AudioClip collectSound;
+	public GameManager manager;
+
 	// Use this for initialization
 	void Start () {
 	
@@ -16,22 +18,25 @@ public class CollectScript : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D collider2D) {
 		switch (collider2D.gameObject.name) {
 		case "P1Point":
-			GameManager.p1Points += 100;
+			manager.p1Points += 100;
 			audio.PlayOneShot(collectSound);
 			Destroy(collider2D.gameObject);
 			break;
 		case "P2Point":
-			GameManager.p2Points += 100;
+			manager.p2Points += 100;
 			audio.PlayOneShot(collectSound);
 			Destroy(collider2D.gameObject);
 			break;
 		case "Fuel":
-			GameManager.currentFuel += 500;
+			manager.currentFuel += 500;
 			audio.PlayOneShot(collectSound);
 			Destroy(collider2D.gameObject);
 			break;
 		case "Astroid":
-			GameManager.ExplodeMothership();
+			manager.ExplodeMothership();
+			break;
+		case "LevelComplete":
+			manager.WinLevel();
 			break;
 		default:
 			break;

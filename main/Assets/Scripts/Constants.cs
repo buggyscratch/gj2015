@@ -15,7 +15,11 @@ public class Constants {
 		public const string P2PointsLabel = "P2UIPoints";
 		public const string PlayerPointsText = "POINTS";
 		public const string FuelLabelText = "Remaining Fuel";
-		public const string PausedPanel = "PausedPanel";
+		public const string PausedCanvas = "PausedCanvas";
+		public const string UICanvas = "UICanvas";
+		public const string IntroCanvas = "IntroCanvas";
+		public const string WinCanvas = "WinCanvas";
+		public const string GameOverCanvas = "GameOverCanvas";
 	}
 }
 
@@ -29,6 +33,7 @@ public enum MothershipState{
 public enum GameState{
 	Running,
 	Paused,
-	Menu,
-	GameOver
+	Title,
+	GameOver,
+	Win
 }

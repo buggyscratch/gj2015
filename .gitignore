@@ -1,2 +1,5 @@
-main/Library
-main\Library
+main/Library/*
+main\Library\*
+main/Temp/UnityLockfile
+main/Library/guidmapper
+main/Library/assetDatabase3
